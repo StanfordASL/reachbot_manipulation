@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Manipulation with ReachBot">
+  <meta name="keywords" content="ReachBot, Robotics, Manipulation, Parallel, Reconfigurable">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task-Driven Manipulation with Reconfigurable Parallel Robots</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <!-- TODO: Add additional header links in the future -->
+  <!-- See Nerfies site as an example -->
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Task-Driven Manipulation with Reconfigurable Parallel Robots</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://stanfordasl.github.io/people/dan-morton/">Daniel Morton</a>,</span>
+              <span class="author-block">
+                <a href="http://bdml.stanford.edu/">Mark Cutkosky</a>,</span>
+              <span class="author-block">
+                <a href="https://stanfordasl.github.io/">Marco Pavone</a>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Stanford University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <!-- TODO FIX LINK -->
+                  <a href="https://arxiv.org/pdf/2110.10829.pdf"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <!-- TODO FIX LINK -->
+                  <a href="https://arxiv.org/abs/2110.10829" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <!-- TODO FIX LINK -->
+                  <a href="https://www.youtube.com/watch?v=Q6uvS_19OcA"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/StanfordASL/reachbot_manipulation"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="./static/images/rb_banner.jpg" alt="" style="display: block; margin-left: auto; margin-right: auto" />
+        <h2 class="subtitle has-text-centered">
+          ReachBot executes a manipulation task in a Martian cave
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              ReachBot, a proposed robotic platform, employs extendable booms as limbs for mobility in challenging
+              environments, such as martian caves. When attached to the environment, ReachBot acts as a parallel robot,
+              with reconfiguration driven by the ability to detach and re-place the booms. This ability enables
+              manipulation-focused scientific objectives: for instance, through operating tools, or handling and
+              transporting samples. To achieve these capabilities, we develop a two-part solution, optimizing for
+              robustness against task uncertainty and stochastic failure modes. First, we present a mixed-integer stance
+              planner to determine the positioning of ReachBot's booms (i.e., the configuration of the parallel robot)
+              to maximize the task wrench space about the nominal point or trajectory. Second, we present a convex
+              tension planner to determine boom tensions for a desired task wrench or series of wrenches, accounting for
+              the probabilistic nature of microspine grasping. We demonstrate improvements in key robustness metrics
+              from the field of dexterous manipulation, and show a large increase in the volume of the manipulation
+              workspace. Finally, we employ Monte-Carlo simulation to validate the task-level robustness of these
+              methods, demonstrating good performance across a range of randomized tasks and environments, and
+              generalization to cable-driven morphologies.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <!-- Paper video. -->
+      <!-- TODO REPLACE VIDEO WITH PROPER ONE -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/watch?v=Q6uvS_19OcA" frameborder="0" allow="autoplay; encrypted-media"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <!--/ Paper video. -->
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Concurrent Work. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Related Links</h2>
+
+          <div class="content has-text-justified">
+            <p>
+              Additional info on ReachBot can be found at the following links:
+            </p>
+            <p>
+              <a
+                href="https://www.nasa.gov/directorates/stmd/niac/reachbot-small-robot-for-large-mobile-manipulation-tasks-in-martian-cave-environments/">NASA
+                ReachBot summary</a>
+            </p>
+            <p>
+              <a href="https://www.cnn.com/2022/07/01/world/mars-reachbot-cave-robot-scn/index.html">CNN article</a>
+            </p>
+            <p>
+              <a href="http://bdml.stanford.edu/Main/ReachBot">BDML ReachBot page</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Concurrent Work. -->
+
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@unpublished{MortonCutkoskyPavone2024,
+        author = {Morton, D. and Cutkosky, M. and Pavone, M.},
+        title = {Task-Driven Manipulation with Reconfigurable Parallel Robots},
+        year = {2024},
+        note = {Submitted to 2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+      }</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content has-text-centered">
+            <p>
+              Website template borrowed from <a href="https://nerfies.github.io/">Nerfies</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
