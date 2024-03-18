@@ -107,7 +107,9 @@
       <div class="hero-body">
         <img src="./static/images/rb_banner.jpg" alt="" style="display: block; margin-left: auto; margin-right: auto" />
         <h2 class="subtitle has-text-centered">
-          ReachBot executes a manipulation task in a Martian cave
+          ReachBot performs a sample-extraction manipulation task in a cave environment. By optimally planning (i) where
+          to place the booms and (ii) the tensions in each boom, we ensure that this task is completed even with
+          uncertain pose and wrench estimation, and stochastic failure modes.
         </h2>
       </div>
     </div>
@@ -127,13 +129,12 @@
               manipulation-focused scientific objectives: for instance, through operating tools, or handling and
               transporting samples. To achieve these capabilities, we develop a two-part solution, optimizing for
               robustness against task uncertainty and stochastic failure modes. First, we present a mixed-integer stance
-              planner to determine the positioning of ReachBot's booms (i.e., the configuration of the parallel robot)
-              to maximize the task wrench space about the nominal point or trajectory. Second, we present a convex
-              tension planner to determine boom tensions for a desired task wrench or series of wrenches, accounting for
-              the probabilistic nature of microspine grasping. We demonstrate improvements in key robustness metrics
-              from the field of dexterous manipulation, and show a large increase in the volume of the manipulation
-              workspace. Finally, we employ Monte-Carlo simulation to validate the task-level robustness of these
-              methods, demonstrating good performance across a range of randomized tasks and environments, and
+              planner to determine the positioning of ReachBot's booms to maximize the task wrench space about the
+              nominal point(s). Second, we present a convex tension planner to determine boom tensions for the desired
+              task wrenches, accounting for the probabilistic nature of microspine grasping. We demonstrate improvements
+              in key robustness metrics from the field of dexterous manipulation, and show a large increase in the
+              volume of the manipulation workspace. Finally, we employ Monte-Carlo simulation to validate the robustness
+              of these methods, demonstrating good performance across a range of randomized tasks and environments, and
               generalization to cable-driven morphologies.
             </p>
           </div>
@@ -141,122 +142,162 @@
       </div>
       <!--/ Abstract. -->
 
-      <section class="section">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-              <h2 class="title is-3">🚧 Site under construction 🚧</h2>
-              <div class="content has-text-justified">
-                <p>
-                  TODO:
-                </p>
-                <p>- Arxiv link + PDF</p>
-                <p>- Video + media upload</p>
-              </div>
-            </div>
+      <!-- Overview. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Overview</h2>
+          <div class="content has-text-justified">
+            <br>
+            <img src="./static/images/operations.svg" alt=""
+              style="display: block; margin-left: auto; margin-right: auto" />
+            <p><br>
+              ReachBot is a proposed robotic concept for enhanced mobility in challenging environments,
+              such as martian lava tubes. Using deployable booms as reconfigurable prismatic joints, ReachBot can extend
+              and traverse across large regions, accessing hard-to-reach areas of scientific interest.
+              <br><br>
+              However, to truly perform interesting science in these environments, and to set itself apart from more
+              traditional rovers, ReachBot must also have manipulation capabilities.
+              <br><br>
+              Consider a sample extraction task: NASA may be interested in taking a geological sample from a
+              hard-to-reach area of the Moon or Mars. This will require a robot like ReachBot to:
+            <ul>
+              <li>Align a camera to analyze a region while maintaining a steady view</li>
+              <li>Apply a force or torque to extract the sample, through grasping or drilling</li>
+              <li>Transport the sample to a retrieval location</li>
+            </ul>
+            <!-- <br> -->
+            For each of these to occur, the robot must carefully plan its motion and the forces/torques it applies,
+            ensuring that it maintains stability and safely completes the task.
+            </p>
+            <br>
+            <img src="./static/images/task_polytopes.svg" alt=""
+              style="display: block; margin-left: auto; margin-right: auto" />
+            <p><br>
+              To do this, we create a two-part system which optimizes the ReachBot configuration and the tensions in
+              each boom. We use concepts from dexterous manipulation (task ellipsoids and wrench spaces) to form our
+              optimization problem, which optimizes for the worst-case disturbance wrench (a force and torque) in the
+              task.
+            </p>
+            <p>This allows ReachBot to safely execute tasks such as the following, while maintaining stability: </p>
+            <video id="teaser" autoplay muted loop playsinline height="100%">
+              <source src="./static/videos/manip_task.mp4" type="video/mp4">
+            </video>
+
+            <p><br>Please refer to the paper (linked at the top of the page) for more details</p>
+
+            <p>🚧 This site is currently under construction 🚧</p>
+
           </div>
-
-          <!-- Paper video. -->
-          <!-- TODO REPLACE VIDEO WITH PROPER ONE -->
-          <!-- <div class="columns is-centered has-text-centered"> -->
-          <!-- <div class="column is-four-fifths"> -->
-          <!-- <h2 class="title is-3">Video</h2> -->
-          <!-- <div class="publication-video"> -->
-          <!-- <iframe src="https://www.youtube.com/embed/Q6uvS_19OcA?si=YP3F8Buh4keMQjjg" frameborder="0" -->
-          <!-- allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-          <!-- </div> -->
-          <!-- </div> -->
-          <!-- </div> -->
-          <!--/ Paper video. -->
         </div>
-      </section>
+      </div>
+      <!--/ Overview. -->
+
+      <!-- Paper video. -->
+      <!-- TODO REPLACE VIDEO WITH PROPER ONE -->
+      <!-- <div class="columns is-centered has-text-centered"> -->
+      <!-- <div class="column is-four-fifths"> -->
+      <!-- <h2 class="title is-3">Video</h2> -->
+      <!-- <div class="publication-video"> -->
+      <!-- <iframe src="https://www.youtube.com/embed/Q6uvS_19OcA?si=YP3F8Buh4keMQjjg" frameborder="0" -->
+      <!-- allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+      <!-- </div> -->
+      <!-- </div> -->
+      <!-- </div> -->
+      <!--/ Paper video. -->
+    </div>
+  </section>
 
 
-      <section class="section">
-        <div class="container is-max-desktop">
-          <!-- Concurrent Work. -->
-          <div class="columns is-centered">
-            <div class="column is-full-width">
-              <h2 class="title is-3">Related Links</h2>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Concurrent Work. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Related Links</h2>
 
-              <div class="content has-text-justified">
-                <p>
-                  ReachBot in media:
-                </p>
-                <p>
-                  <a
-                    href="https://www.nasa.gov/directorates/stmd/niac/reachbot-small-robot-for-large-mobile-manipulation-tasks-in-martian-cave-environments/">NASA
-                    ReachBot summary</a>
-                </p>
-                <p>
-                  <a href="https://www.cnn.com/2022/07/01/world/mars-reachbot-cave-robot-scn/index.html">CNN article</a>
-                </p>
-                <p>
-                  <a href="https://engineering.stanford.edu/magazine/limitations-being-human-got-you-down-theres-robot">Stanford
-                    Engineering article</a>
-                </p>
-                <p>
-                  Previous ReachBot papers:
-                </p>
-                <p>
-                  <a href="https://ieeexplore.ieee.org/document/9843346">ReachBot: A Small Robot for Large Mobile
-                    Manipulation Tasks</a>
-                </p>
-                <p>
-                  <a href="https://ieeexplore.ieee.org/document/9811949">ReachBot: A Small Robot with Exceptional Reach
-                    for Rough Terrain</a>
-                </p>
-                <p>
-                  <a href="https://ieeexplore.ieee.org/abstract/document/10160218">Motion Planning for a Climbing Robot
-                    with Stochastic Grasps</a>
-                </p>
-                <p>
-                  <a href="https://ieeexplore.ieee.org/document/10115893">Designing ReachBot: System Design Process with
-                    a Case Study of a Martian Lava Tube Mission</a>
-                </p>
-                <p>
-                  <a href="https://arxiv.org/abs/2312.09302">Detecting Grasping Sites in a Martian Lava Tube:
-                    Multi-Stage Perception Trade Study for ReachBot</a>
-                </p>
-                <p>
-                  <a href="https://arxiv.org/abs/2309.05139">A Skeleton-based Approach For Rock Crack Detection Towards
-                    A Climbing Robot Application</a>
-                </p>
-              </div>
-            </div>
+          <div class="content has-text-justified">
+            <p>
+              ReachBot in the media:
+            </p>
+            <p>
+              <a
+                href="https://www.nasa.gov/directorates/stmd/niac/reachbot-small-robot-for-large-mobile-manipulation-tasks-in-martian-cave-environments/">NASA:
+                ReachBot: Small Robot for Large Mobile Manipulation Tasks in Martian Cave Environments</a>
+            </p>
+            <p>
+              <a href="https://www.cnn.com/2022/07/01/world/mars-reachbot-cave-robot-scn/index.html">CNN: Meet the
+                explorer that could be 1st to search for life in Martian caves</a>
+            </p>
+            <p>
+              <a href="https://engineering.stanford.edu/magazine/limitations-being-human-got-you-down-theres-robot">Stanford
+                Engineering: The limitations of being human got you down? There's a robot for that</a>
+            </p>
+            <p><br>
+              Previous ReachBot papers:
+            </p>
+            <p>
+              <a href="https://ieeexplore.ieee.org/document/9843346">ReachBot: A Small Robot for Large Mobile
+                Manipulation Tasks</a>
+            </p>
+            <p>
+              <a href="https://ieeexplore.ieee.org/document/9811949">ReachBot: A Small Robot with Exceptional
+                Reach
+                for Rough Terrain</a>
+            </p>
+            <p>
+              <a href="https://ieeexplore.ieee.org/abstract/document/10160218">Motion Planning for a Climbing
+                Robot
+                with Stochastic Grasps</a>
+            </p>
+            <p>
+              <a href="https://ieeexplore.ieee.org/document/10115893">Designing ReachBot: System Design Process
+                with
+                a Case Study of a Martian Lava Tube Mission</a>
+            </p>
+            <p>
+              <a href="https://arxiv.org/abs/2312.09302">Detecting Grasping Sites in a Martian Lava Tube:
+                Multi-Stage Perception Trade Study for ReachBot</a>
+            </p>
+            <p>
+              <a href="https://arxiv.org/abs/2309.05139">A Skeleton-based Approach For Rock Crack Detection
+                Towards
+                A Climbing Robot Application</a>
+            </p>
           </div>
-          <!--/ Concurrent Work. -->
-
         </div>
-      </section>
+      </div>
+      <!--/ Concurrent Work. -->
+
+    </div>
+  </section>
 
 
-      <section class="section" id="BibTeX">
-        <div class="container is-max-desktop content">
-          <h2 class="title">BibTeX</h2>
-          <pre><code>@unpublished{MortonCutkoskyPavone2024,
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{MortonCutkoskyPavone2024,
         author = {Morton, D. and Cutkosky, M. and Pavone, M.},
         title = {Task-Driven Manipulation with Reconfigurable Parallel Robots},
         year = {2024},
         note = {Submitted to 2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
       }</code></pre>
-        </div>
-      </section>
+    </div>
+  </section>
 
 
-      <footer class="footer">
-        <div class="container">
-          <div class="columns is-centered">
-            <div class="column">
-              <div class="content has-text-centered">
-                <p>
-                  Website template borrowed from <a href="https://nerfies.github.io/">Nerfies</a>
-                </p>
-              </div>
-            </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content has-text-centered">
+            <p>
+              Website template borrowed from <a href="https://nerfies.github.io/">Nerfies</a>
+            </p>
           </div>
         </div>
-      </footer>
+      </div>
+    </div>
+  </footer>
 
 </body>
 
