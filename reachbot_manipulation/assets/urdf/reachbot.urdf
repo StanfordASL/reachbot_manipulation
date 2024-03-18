@@ -1,0 +1,32 @@
+<!-- TODO -->
+<!-- Refine all mass/inertia values (MOST ARE WRONG) -->
+<!-- Refine effort and velocity limits -->
+
+<robot name="reachbot">
+    <link name="body_link">
+        <self_collide>false</self_collide>
+        <visual name="body_visual">
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="1 1 1"/>
+            </geometry>
+            <material name="reachbot_material">
+                <!-- White -->
+                <color rgba="1 1 1 1"/>
+            </material>
+        </visual>
+        <collision name="body_collision">
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="1 1 1"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="10"/>
+            <!-- TODO determine inertia values, these are WRONG -->
+            <inertia ixx="0.09725221" ixy="0" ixz="0" iyy="0.17358033" iyz="0" izz="0.12721354"/>
+        </inertial>
+    </link>
+
+</robot>
