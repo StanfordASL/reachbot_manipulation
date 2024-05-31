@@ -18,7 +18,6 @@ setup(
         "clarabel",
         "mosek",
         "pybullet",
-        "mujoco",
         "ipython",
         "wheel",
         "pyyaml",
