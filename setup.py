@@ -9,7 +9,7 @@ setup(
     name="reachbot_manipulation",
     version="0.0.1",
     install_requires=[
-        "numpy",
+        "numpy==1.26.4",
         "matplotlib",
         "tqdm",
         "scipy",
