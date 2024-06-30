@@ -4,3 +4,6 @@
 reachbot_manipulation/
 .python-version
 artifacts/
+
+*.egg-info/*
+__pycache__
